@@ -1,0 +1,228 @@
+---
+name: Mireia
+surname: Ramos-Rodríguez
+position: "Postdoctoral Researcher"
+# address: "Parc de Recerca Biomèdica de Barcelona (PRBB), Carrer de Dr. Aiguader, 88."
+# phone: +34 933 160 808
+# profilepic: mariecurie.jpg
+# www: biorants.netlify.app
+email: "mireia.ramos@upf.edu"
+twitter: mireia_bioinfo
+github: mireia-bioinfo
+linkedin: mireia-bioinfo
+orcid: "0000-0001-8083-2445"
+date: "`r format(Sys.time(), '%b %Y')`"
+# aboutme: "Bioinformatics Researcher interested in decyphering cis-regulatory circuitries leading to disease and in developing software to aid other fellow researchers in their analyses."
+# csl: apa-cv.csl
+output: 
+  vitae::awesomecv:
+    keep_tex: true
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE, warning = FALSE, message = FALSE)
+library(vitae)
+library(tibble)
+library(dplyr)
+library(rorcid)
+library(googlesheets4)
+```
+
+```{=html}
+<!--  # Research Statement
+
+Throughout my research career, I have dedicated my focus to **unraveling the cis-regulatory networks of** β cells within the context of diseases, particularly T1D. Building upon this foundation, I have recently expanded my investigations to encompass neoplastic malignancies, including insulinomas (manuscript in preparation). Notably, my doctoral thesis emphasized the pivotal role of β cells in the development of T1D, thereby highlighting the indispensable nature of studying this component to fully elucidate the pathophysiology of the disease. As a result, my current research is centered around acquiring invaluable insights into the **mechanisms by which β cells contribute to T1D** and identifying **strategies to safeguard them against autoimmune destruction**. Given my training as a computational biologist, I am uniquely positioned to address these questions, leveraging cutting-edge technologies that require extensive bioinformatics knowledge, all while considering the essential biological aspects involved.
+
+-->
+```
+# Education
+
+```{r}
+tribble(
+  ~ Degree, ~ Year, ~ Institution, ~ Where,
+  "PhD in Biomedicine (Bioinformatics research area)", "2016 - 2020", "Universitat de Barcelona", "Barcelona, Spain",
+  "MSc in Bioinformatics", "2014 - 2015", "Universidad de Murcia", "Murcia, Spain",
+  "BSc in Biomedical Sciences", "2009 - 2014", "Universitat Autònoma de Barcelona", "Barcelona, Spain"
+) %>% 
+  detailed_entries(with=Degree, when=Year, what=Institution, where=Where)
+```
+
+# Work Experience
+
+```{r}
+tribble(
+  ~ Role, ~ Year, ~ Organization, ~ City, ~ Why,
+  "Postdoctoral Researcher", "NOV 2020 - Present", "Endocrine Regulatory Genomics, MELIS - UPF", "Barcelona, Spain", "Processing and analys of transcriptome and epigenome data, in bulk (RNA-seq, ATAC-seq, CUT&TAG, ChIP-seq) and single cell (scRNA-seq, scATAC-seq)",
+  "Postdoctoral Researcher", "NOV 2020 - Present", "Endocrine Regulatory Genomics, MELIS - UPF", "Barcelona, Spain", "Analysis and development of software for querying 3D chromatin structure (UMI-4C)",
+  "Postdoctoral Researcher", "NOV 2020 - Present", "Endocrine Regulatory Genomics, MELIS - UPF", "Barcelona, Spain", "Integration of omics data to decypher cis-regulatory networks that drive gene expression",
+  "Predoctoral Researcher", "DEC 2015 - NOV 20", "Endocrine Regulatory Genomics, Institut Germans Trias i Pujol (IGTP)", "Badalona, Spain", "Processing and analysis of ATAC-seq, RNA-seq and ChIP-seq",
+  "Predoctoral Researcher", "DEC 2015 - NOV 20", "Endocrine Regulatory Genomics, Institut Germans Trias i Pujol (IGTP)", "Badalona, Spain", "Integration of gene expression information with chromatin landscape",
+  "Predoctoral Researcher", "DEC 2015 - NOV 20", "Endocrine Regulatory Genomics, Institut Germans Trias i Pujol (IGTP)", "Badalona, Spain", "Software development (R packages & web applications)",
+  "Maths4Life Fellow", "JUL 2015 - AUG 2015", "Biostatistics and Bioinformatics Unit, Institut de Recerca Biomèdica de Barcelona (IRB)", "Barcelona, Spain", "Development of a Shiny App to explore the role of microRNAs in prostate cancer.",
+  "Research Student", "NOV 2013 - MAY 2014", "Computational Medicine, Universitat Autònoma de Barcelona (UAB)", "Barcelona, Spain", "Moledulcar dynamic simulations of G-protein coupled receptors (GPCRs)."
+) %>% 
+  detailed_entries(with=Role, when=Year, what=Organization, where=City, why=Why)
+```
+
+# Projects as Principal Investigator
+
+```{r}
+# tribble(~Software, ~When,
+#         "\\textbf{UMI4Cats}. R package for processing, analysis and visualization of UMI-4C chromatin contact data. \\href{https://bioconductor.org/packages/devel/bioc/html/UMI4Cats.html}{Bioconductor}", 2020,
+#         "\\textbf{The Islet Regulome Browser}. Visualization tool that provides access to interactive exploration of pancreatic islet genomic data. \\href{http://www.isletregulome.org}{isletregulome.org}", 2017)
+
+data.frame(Software = c("\\textbf{Beca Impulso Talento Joven}. Fundación DiabetesCERO (Spain)"
+                        ), 
+           When = c("2023-2025"))%>% 
+  brief_entries(what=Software, when=When, .protect = FALSE)
+```
+
+# Publications
+
+```{r, eval=TRUE}
+# scholar::get_publications("gsjxsNQAAAAJ") %>%
+#   filter(cites > 1) %>%
+#   distinct(title, .keep_all = TRUE) %>%
+#   transmute(bibtype = "Article",
+#             author = as.character(author),
+#             title = as.character(title),
+#             journaltitle = as.character(journal),
+#             year,
+#             key = gsub("í" , "i", paste0(unlist(lapply(strsplit(author, ", "),function (x) strsplit(x[1], " ")[[1]][2])), year))
+#             ) %>%
+#   arrange(desc(year)) %>%
+#   RefManageR::as.BibEntry() %>%
+#   RefManageR::WriteBib("mrr.bib", biblatex=T)
+
+bibliography_entries("mrr_mod.bib") %>%
+  # mutate(author=gsub("Mireia Ramos-Rodríguez", "\\textbf{Mireia Ramos-Rodríguez}")) %>% 
+  arrange(desc(issued))
+```
+
+# Software & Applications
+
+```{r}
+data.frame(Software = c("\\textbf{UMI4Cats}. R package for processing, analysis and visualization of UMI-4C chromatin contact data. \\href{https://bioconductor.org/packages/devel/bioc/html/UMI4Cats.html}{Bioconductor}",
+                        "\\textbf{The Islet Regulome Browser}. Visualization tool that provides access to interactive exploration of pancreatic islet genomic data. \\href{http://www.isletregulome.org}{isletregulome.org}"), 
+           When = c(2022, 2017))%>% 
+  brief_entries(what=Software, when=When, .protect = FALSE)
+```
+
+# Fellowships & Awards
+
+```{r}
+tribble(
+  ~When, ~Title, ~Organization,
+  "OCT 2022", "Premi Extraordinari de Doctorat de la Facultat de Biologia de la Universitat de Barcelona", "UB",
+  "OCT 2020", "Premi al Millor Article de Recerca en Ciències de la Salut elaborat per un Investigador Predoctoral", "ICS",
+  "AUG 2018", "Excellent poster presentation (Spetses Summer School on Chromatin and Metabolism)", "ChroMe",
+  "MAR 2017", "PhD Fellowship -- Ayudas para la contratación de personal investigador novel (FI)", "AGAUR",
+  "JUL 2015", "Maths4Life Fellowship", "IRB"
+) %>%
+  brief_entries(what=Title, when=When, with=Organization)
+```
+
+# Teaching Experience
+
+```{r, eval = TRUE}
+tribble(
+  ~ Title, ~ Date, ~ Organization, ~ City, ~Materials,
+  "Basic Genetics ", "APR 2021 - Present", "Universitat Pompeu Fabra (UPF)", "Barcelona, Spain", "2nd year of Human Biology and Medicine degrees.", 
+  "Fundamentals of Computational Biology ", "SEPT 2021 - DEC 2022", "Universitat Pompeu Fabra (UPF)", "Barcelona, Spain", "1st year of Human Biology degree.", 
+  "Graphic Wizardry with Inkscape ", "30th JAN 2020", "Can Ruti PhD Committee Workshop", "Barcelona, Spain", "Materials: \\:  \\href{https://drive.google.com/drive/folders/1YX2Z0tJCsVZ4BlWu7Nwu3ZTNlZL2bq9p?usp=sharing}{Google Drive}", 
+  "Improve your plots with ggplot2 ", "15th OCT 2019", "R-Ladies Barcelona Workshop", "Barcelona, Spain", "Materials: \\: \\faGithubSquare \\: \\href{https://github.com/mireia-bioinfo/workshop_ggplot2}{mireia-bioinfo/workshop\\_ggplot2}", 
+  "Analyzing ChIP-seq data ", "13th - 15th MAR 2019", "Bioinformatics Workshop: Introduction to NGS Data Analysis (EPICHEMBIO)", "Badalona, Spain", "Materials: \\: \\faGithubSquare \\: \\href{https://github.com/mireia-bioinfo/workshop_bioinfo_ChIPseq}{mireia-bioinfo/workshop\\_bioinfo\\_ChIPseq}", 
+  "Plots with ggplot2 are better plots! ", "27th SEP 2017", "R-Ladies Barcelona Workshop", "Barcelona, Spain", "Materials: \\: \\faGithubSquare \\: \\href{https://github.com/mireia-bioinfo/2017-09-27_rladiesBCN-meetup-ggplot2}{mireia-bioinfo/2017-09-27\\_rladiesBCN-meetup-ggplot2}"
+) %>% 
+  detailed_entries(with=Title, when=Date, what=Organization, where=City, why=Materials, 
+                   .protect = FALSE)
+```
+
+# Extracurricular Activities
+
+```{r}
+tribble(~Title, ~Date, ~Organization, ~Where,
+        "Organizer", "2017 - 2023", "R-Ladies Barcelona", "Barcelona Spain",
+        "Member/President", "2018 - 2020", "Can Ruti PhD Committee", "Badalona, Spain") %>%
+  detailed_entries(what=Title, when=Date, with=Organization, where=Where)
+```
+
+<!-- # Presentations in National and International Congresses -->
+
+<!-- ## Oral presentations -->
+
+<!-- ```{r, eval=FALSE} -->
+
+<!-- read_sheet("1fKu_4zFpSr5a96Ppwc5pvsPnSV9LWVWB6le2CPOKPhU") %>% -->
+
+<!--   filter(Type=="Oral") %>% -->
+
+<!--   transmute(bibtype = "Proceedings", -->
+
+<!--             author = as.character(Authors),#gsub("Mireia Ramos-Rodríguez", "\\textbf{Mireia Ramos-Rodríguez}", as.character(Authors)), -->
+
+<!--             title = as.character(Title), -->
+
+<!--             organization = paste0(gsub("and", "&", Congress), " (", Location, ")"), -->
+
+<!--             year=Year, -->
+
+<!--             moth=Month, -->
+
+<!--             key = row_number() -->
+
+<!--             ) %>% -->
+
+<!--   RefManageR::as.BibEntry() %>% -->
+
+<!--   RefManageR::WriteBib("congresses_oralpres.bib", biblatex=T) -->
+
+<!-- ``` -->
+
+<!-- ```{r} -->
+
+<!-- bibliography_entries("congresses_oralpres.bib") %>% -->
+
+<!--   arrange(desc(issued)) -->
+
+<!-- ``` -->
+
+<!-- ## Posters -->
+
+<!-- ```{r, eval=FALSE} -->
+
+<!-- read_sheet("1fKu_4zFpSr5a96Ppwc5pvsPnSV9LWVWB6le2CPOKPhU") %>% -->
+
+<!--   filter(Type=="Poster") %>% -->
+
+<!--   transmute(bibtype = "Proceedings", -->
+
+<!--             author = as.character(Authors),#gsub("Mireia Ramos-Rodríguez", "\\textbf{Mireia Ramos-Rodríguez}", as.character(Authors)), -->
+
+<!--             title = as.character(Title), -->
+
+<!--             organization = paste0(paste0(gsub("and", "&", Congress), " (", Location, ")")), -->
+
+<!--             year=Year, -->
+
+<!--             moth=Month, -->
+
+<!--             key = row_number() -->
+
+<!--             ) %>% -->
+
+<!--   RefManageR::as.BibEntry() %>% -->
+
+<!--   RefManageR::WriteBib("congresses_poster.bib", biblatex=T) -->
+
+<!-- ``` -->
+
+<!-- ```{r} -->
+
+<!-- bibliography_entries("congresses_poster.bib") %>% -->
+
+<!--   arrange(desc(issued)) -->
+
+<!-- ``` -->
+
+<!-- \newpage -->

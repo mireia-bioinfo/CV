@@ -1,0 +1,330 @@
+%!TEX TS-program = xelatex
+%!TEX encoding = UTF-8 Unicode
+% Awesome CV LaTeX Template for CV/Resume
+%
+% This template has been downloaded from:
+% https://github.com/posquit0/Awesome-CV
+%
+% Author:
+% Claud D. Park <posquit0.bj@gmail.com>
+% http://www.posquit0.com
+%
+%
+% Adapted to be an Rmarkdown template by Mitchell O'Hara-Wild
+% 23 November 2018
+%
+% Template license:
+% CC BY-SA 4.0 (https://creativecommons.org/licenses/by-sa/4.0/)
+%
+%-------------------------------------------------------------------------------
+% CONFIGURATIONS
+%-------------------------------------------------------------------------------
+% A4 paper size by default, use 'letterpaper' for US letter
+\documentclass[11pt,a4paper,]{awesome-cv}
+
+% Configure page margins with geometry
+\usepackage{geometry}
+\geometry{left=1.4cm, top=.8cm, right=1.4cm, bottom=1.8cm, footskip=.5cm}
+
+
+% Specify the location of the included fonts
+\fontdir[fonts/]
+
+% Color for highlights
+% Awesome Colors: awesome-emerald, awesome-skyblue, awesome-red, awesome-pink, awesome-orange
+%                 awesome-nephritis, awesome-concrete, awesome-darknight
+
+\colorlet{awesome}{awesome-red}
+
+% Colors for text
+% Uncomment if you would like to specify your own color
+% \definecolor{darktext}{HTML}{414141}
+% \definecolor{text}{HTML}{333333}
+% \definecolor{graytext}{HTML}{5D5D5D}
+% \definecolor{lighttext}{HTML}{999999}
+
+% Set false if you don't want to highlight section with awesome color
+\setbool{acvSectionColorHighlight}{true}
+
+% If you would like to change the social information separator from a pipe (|) to something else
+\renewcommand{\acvHeaderSocialSep}{\quad\textbar\quad}
+
+\def\endfirstpage{\newpage}
+
+%-------------------------------------------------------------------------------
+%	PERSONAL INFORMATION
+%	Comment any of the lines below if they are not required
+%-------------------------------------------------------------------------------
+% Available options: circle|rectangle,edge/noedge,left/right
+
+\name{Mireia}{Ramos-Rodríguez}
+
+\position{Postdoctoral Researcher}
+
+\email{\href{mailto:mireia.ramos@upf.edu}{\nolinkurl{mireia.ramos@upf.edu}}}
+\orcid{0000-0001-8083-2445}
+\github{mireia-bioinfo}
+\linkedin{mireia-bioinfo}
+\twitter{mireia\_bioinfo}
+
+% \gitlab{gitlab-id}
+% \stackoverflow{SO-id}{SO-name}
+% \skype{skype-id}
+% \reddit{reddit-id}
+
+
+\usepackage{booktabs}
+
+\providecommand{\tightlist}{%
+	\setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+
+%------------------------------------------------------------------------------
+
+
+
+% Pandoc CSL macros
+\newlength{\cslhangindent}
+\setlength{\cslhangindent}{1.5em}
+\newlength{\csllabelwidth}
+\setlength{\csllabelwidth}{2em}
+\newenvironment{CSLReferences}[2] % #1 hanging-ident, #2 entry spacing
+ {% don't indent paragraphs
+  \setlength{\parindent}{0pt}
+  % turn on hanging indent if param 1 is 1
+  \ifodd #1 \everypar{\setlength{\hangindent}{\cslhangindent}}\ignorespaces\fi
+  % set entry spacing
+  \ifnum #2 > 0
+  \setlength{\parskip}{#2\baselineskip}
+  \fi
+ }%
+ {}
+\usepackage{calc}
+\newcommand{\CSLBlock}[1]{#1\hfill\break}
+\newcommand{\CSLLeftMargin}[1]{\parbox[t]{\csllabelwidth}{\honortitlestyle{#1}}}
+\newcommand{\CSLRightInline}[1]{\parbox[t]{\linewidth - \csllabelwidth}{\honordatestyle{#1}}}
+\newcommand{\CSLIndent}[1]{\hspace{\cslhangindent}#1}
+
+\begin{document}
+
+% Print the header with above personal informations
+% Give optional argument to change alignment(C: center, L: left, R: right)
+\makecvheader
+
+% Print the footer with 3 arguments(<left>, <center>, <right>)
+% Leave any of these blank if they are not needed
+% 2019-02-14 Chris Umphlett - add flexibility to the document name in footer, rather than have it be static Curriculum Vitae
+\makecvfooter
+  {mar 2024}
+    {Mireia Ramos-Rodríguez~~~·~~~Curriculum Vitae}
+  {\thepage}
+
+
+%-------------------------------------------------------------------------------
+%	CV/RESUME CONTENT
+%	Each section is imported separately, open each file in turn to modify content
+%------------------------------------------------------------------------------
+
+
+
+\hypertarget{education}{%
+\section{Education}\label{education}}
+
+\begin{cventries}
+    \cventry{Universitat de Barcelona}{PhD in Biomedicine (Bioinformatics research area)}{Barcelona, Spain}{2016 - 2020}{}\vspace{-4.0mm}
+    \cventry{Universidad de Murcia}{MSc in Bioinformatics}{Murcia, Spain}{2014 - 2015}{}\vspace{-4.0mm}
+    \cventry{Universitat Autònoma de Barcelona}{BSc in Biomedical Sciences}{Barcelona, Spain}{2009 - 2014}{}\vspace{-4.0mm}
+\end{cventries}
+
+\hypertarget{work-experience}{%
+\section{Work Experience}\label{work-experience}}
+
+\begin{cventries}
+    \cventry{Endocrine Regulatory Genomics, MELIS - UPF}{Postdoctoral Researcher}{Barcelona, Spain}{NOV 2020 - Present}{\begin{cvitems}
+\item Processing and analys of transcriptome and epigenome data, in bulk (RNA-seq, ATAC-seq, CUT\&TAG, ChIP-seq) and single cell (scRNA-seq, scATAC-seq)
+\item Analysis and development of software for querying 3D chromatin structure (UMI-4C)
+\item Integration of omics data to decypher cis-regulatory networks that drive gene expression
+\end{cvitems}}
+    \cventry{Endocrine Regulatory Genomics, Institut Germans Trias i Pujol (IGTP)}{Predoctoral Researcher}{Badalona, Spain}{DEC 2015 - NOV 20}{\begin{cvitems}
+\item Processing and analysis of ATAC-seq, RNA-seq and ChIP-seq
+\item Integration of gene expression information with chromatin landscape
+\item Software development (R packages \& web applications)
+\end{cvitems}}
+    \cventry{Biostatistics and Bioinformatics Unit, Institut de Recerca Biomèdica de Barcelona (IRB)}{Maths4Life Fellow}{Barcelona, Spain}{JUL 2015 - AUG 2015}{\begin{cvitems}
+\item Development of a Shiny App to explore the role of microRNAs in prostate cancer.
+\end{cvitems}}
+    \cventry{Computational Medicine, Universitat Autònoma de Barcelona (UAB)}{Research Student}{Barcelona, Spain}{NOV 2013 - MAY 2014}{\begin{cvitems}
+\item Moledulcar dynamic simulations of G-protein coupled receptors (GPCRs).
+\end{cvitems}}
+\end{cventries}
+
+\hypertarget{projects-as-principal-investigator}{%
+\section{Projects as Principal
+Investigator}\label{projects-as-principal-investigator}}
+
+\begin{cvhonors}
+    \cvhonor{}{\textbf{Beca Impulso Talento Joven}. Fundación DiabetesCERO (Spain)}{}{2023-2025}
+\end{cvhonors}
+
+\hypertarget{publications}{%
+\section{Publications}\label{publications}}
+
+\hypertarget{bibliography}{}
+\leavevmode\vadjust pre{\hypertarget{ref-Ramosrodriguez_2024}{}}%
+\CSLLeftMargin{1. }%
+\CSLRightInline{Ramos-Rodríguez, M., Subirana-Granés, M., Norris, R.,
+Sordi, V., Ruiz, Á. F., Fuentes-Páez, G., Pérez-González, B., Balaguer,
+C. B., Raurell-Vila, H., Chowdhury, M., Corripio, R., Partelli, S.,
+López-Bigas, N., Pellegrini, S., Montanya, E., Nacher, M., Falconi, M.,
+Layer, R., Rovira, M., \ldots{} Pasquali, L. (2024). Implications of
+noncoding regulatory functions in the development of insulinomas.
+\emph{bioRxiv}. \url{https://doi.org/10.1101/2024.01.23.576802}}
+
+\leavevmode\vadjust pre{\hypertarget{ref-FontcubertaPiSunyer2023}{}}%
+\CSLLeftMargin{2. }%
+\CSLRightInline{Fontcuberta-PiSunyer, M., Garcı́a-Alamán, A., Prades,
+Èlia, Téllez, N., Alves-Figueiredo, H., Ramos-Rodríguez, M., Enrich, C.,
+Fernandez-Ruiz, R., Cervantes, S., Clua, L., Ramón-Azcón, J., Broca, C.,
+Wojtusciszyn, A., Montserrat, N., Pasquali, L., Novials, A., Servitja,
+J.-M., Vidal, J., Gomis, R., \& Gasa, R. (2023). Direct reprogramming of
+human fibroblasts into insulin-producing cells using transcription
+factors. \emph{Communications Biology}, \emph{6}(1).
+\url{https://doi.org/10.1038/s42003-023-04627-2}}
+
+\leavevmode\vadjust pre{\hypertarget{ref-arroyo_gata4_2021}{}}%
+\CSLLeftMargin{3. }%
+\CSLRightInline{Arroyo, N., Villamayor, L., Díaz, I., Carmona, R.,
+Ramos-Rodríguez, M., Muñoz-Chápuli, R., Pasquali, L., Toscano, M. G.,
+Martín, F., Cano, D. A., \& Rojas, A. (2021). GATA4 induces liver
+fibrosis regression by deactivating hepatic stellate cells. \emph{JCI
+Insight}, \emph{6}(23).
+\url{https://doi.org/10.1172/jci.insight.150059}}
+
+\leavevmode\vadjust pre{\hypertarget{ref-ramos-rodriguez_umi4cats_2021}{}}%
+\CSLLeftMargin{4. }%
+\CSLRightInline{Ramos-Rodríguez, M., Subirana-Granés, M., \& Pasquali,
+L. (2021). UMI4Cats: An R package to analyze chromatin contact profiles
+obtained by UMI-4C. \emph{Bioinformatics}.
+\url{https://doi.org/10.1093/bioinformatics/btab392}}
+
+\leavevmode\vadjust pre{\hypertarget{ref-ramos-rodriguez_-cell_2021}{}}%
+\CSLLeftMargin{5. }%
+\CSLRightInline{Ramos-Rodríguez, M., Pérez-González, B., \& Pasquali, L.
+(2021). The β-Cell Genomic Landscape in T1D: Implications for Disease
+Pathogenesis. \emph{Current Diabetes Reports}, \emph{21}(1), 1.
+\url{https://doi.org/10.1007/s11892-020-01370-4}}
+
+\leavevmode\vadjust pre{\hypertarget{ref-Colli2020}{}}%
+\CSLLeftMargin{6. }%
+\CSLRightInline{Colli, M. L., Ramos-Rodríguez, Mireia, Nakayasu, E. S.,
+Alvelos, M. I., Lopes, M., Hill, J. L. E., Turatsinze, J.-V., Brachène,
+A. C. de, Russell, M. A., Raurell-Vila, H., Castela, A., Juan-Mateu, J.,
+Webb-Robertson, B.-J. M., Krogvold, L., Dahl-Jorgensen, K., Marselli,
+L., Marchetti, P., Richardson, S. J., Morgan, N. G., \ldots{} Eizirik,
+D. L. (2020). An integrated multi-omics approach identifies the
+landscape of interferon-\alpha-mediated responses of human pancreatic
+beta cells. \emph{Nature Communications 2020 11:1}, \emph{11}(1), 1--17.
+\url{https://doi.org/10.1038/s41467-020-16327-0}}
+
+\leavevmode\vadjust pre{\hypertarget{ref-Ramos-Rodriguez2019}{}}%
+\CSLLeftMargin{7. }%
+\CSLRightInline{Ramos-Rodríguez, Mireia, Raurell-Vila, H., Colli, M. L.,
+Alvelos, M. I., Subirana-Granés, M., Juan-Mateu, J., Norris, R.,
+Turatsinze, J.-V., Nakayasu, E. S., Webb-Robertson, B.-J. M., Inshaw, J.
+R. J., Marchetti, P., Piemonti, L., Esteller, M., Todd, J. A., Metz, T.
+O., Eizirik, D. L., \& Pasquali, L. (2019). The impact of
+proinflammatory cytokines on the \beta-cell regulatory landscape
+provides insights into the genetics of type 1 diabetes. \emph{Nature
+Genetics}, \emph{51}(11), 1588--1595.
+\url{https://doi.org/10.1038/s41588-019-0524-6}}
+
+\leavevmode\vadjust pre{\hypertarget{ref-Miguel-Escalada2019}{}}%
+\CSLLeftMargin{8. }%
+\CSLRightInline{Miguel-Escalada, I., Bonàs-Guarch, S., Cebola, I.,
+Ponsa-Cobas, J., Mendieta-Esteban, J., Atla, G., Javierre, B. M.,
+Rolando, D. M. Y., Farabella, I., Morgan, C. C., García-Hurtado, J.,
+Beucher, A., Morán, I., Pasquali, L., Ramos-Rodríguez, Mireia, Appel, E.
+V. R., Linneberg, A., Gjesing, A. P., Witte, D. R., \ldots{} Ferrer, J.
+(2019). Human pancreatic islet three-dimensional chromatin architecture
+provides insights into the genetics of type 2 diabetes. \emph{Nature
+Genetics}, \emph{51}(7), 1137--1148.
+\url{https://doi.org/10.1038/s41588-019-0457-0}}
+
+\leavevmode\vadjust pre{\hypertarget{ref-Kameswaran2018}{}}%
+\CSLLeftMargin{9. }%
+\CSLRightInline{Kameswaran, V., Golson, M. L., Ramos-Rodríguez, Mireia,
+Ou, K., Wang, Y. J., Zhang, J., Pasquali, L., \& Kaestner, K. H. (2018).
+The Dysregulation of the DLK1 - MEG3 Locus in Islets From Patients With
+Type 2 Diabetes Is Mimicked by Targeted Epimutation of Its Promoter With
+TALE-DNMT Constructs. \emph{Diabetes}, \emph{67}(9), 1807--1815.
+\url{https://doi.org/10.2337/db17-0682}}
+
+\leavevmode\vadjust pre{\hypertarget{ref-Raurell-Vila2018}{}}%
+\CSLLeftMargin{10. }%
+\CSLRightInline{Raurell-Vila, H., Ramos-Rodríguez, Mireia, \& Pasquali,
+L. (2018). Assay for Transposase Accessible Chromatin (ATAC-Seq) to
+Chart the Open Chromatin Landscape of Human Pancreatic Islets. In T.
+Vavouri \& M. A. Peinado (Eds.), \emph{Methods in molecular biology}
+(CpG Island, pp. 197--208). Human Press.
+\url{https://doi.org/10.1007/978-1-4939-7768-0_11}}
+
+\leavevmode\vadjust pre{\hypertarget{ref-Mularoni2017}{}}%
+\CSLLeftMargin{11. }%
+\CSLRightInline{Mularoni, L., Ramos-Rodríguez, Mireia, \& Pasquali, L.
+(2017). The Pancreatic Islet Regulome Browser. \emph{Frontiers in
+Genetics}, \emph{8}(FEB), 13.
+\url{https://doi.org/10.3389/fgene.2017.00013}}
+
+\hypertarget{software-applications}{%
+\section{Software \& Applications}\label{software-applications}}
+
+\begin{cvhonors}
+    \cvhonor{}{\textbf{UMI4Cats}. R package for processing, analysis and visualization of UMI-4C chromatin contact data. \href{https://bioconductor.org/packages/devel/bioc/html/UMI4Cats.html}{Bioconductor}}{}{2022}
+    \cvhonor{}{\textbf{The Islet Regulome Browser}. Visualization tool that provides access to interactive exploration of pancreatic islet genomic data. \href{http://www.isletregulome.org}{isletregulome.org}}{}{2017}
+\end{cvhonors}
+
+\hypertarget{fellowships-awards}{%
+\section{Fellowships \& Awards}\label{fellowships-awards}}
+
+\begin{cvhonors}
+    \cvhonor{}{Premi Extraordinari de Doctorat de la Facultat de Biologia de la Universitat de Barcelona}{UB}{OCT 2022}
+    \cvhonor{}{Premi al Millor Article de Recerca en Ciències de la Salut elaborat per un Investigador Predoctoral}{ICS}{OCT 2020}
+    \cvhonor{}{Excellent poster presentation (Spetses Summer School on Chromatin and Metabolism)}{ChroMe}{AUG 2018}
+    \cvhonor{}{PhD Fellowship -- Ayudas para la contratación de personal investigador novel (FI)}{AGAUR}{MAR 2017}
+    \cvhonor{}{Maths4Life Fellowship}{IRB}{JUL 2015}
+\end{cvhonors}
+
+\hypertarget{teaching-experience}{%
+\section{Teaching Experience}\label{teaching-experience}}
+
+\begin{cventries}
+    \cventry{Universitat Pompeu Fabra (UPF)}{Basic Genetics }{Barcelona, Spain}{APR 2021 - Present}{\begin{cvitems}
+\item 2nd year of Human Biology and Medicine degrees.
+\end{cvitems}}
+    \cventry{Universitat Pompeu Fabra (UPF)}{Fundamentals of Computational Biology }{Barcelona, Spain}{SEPT 2021 - DEC 2022}{\begin{cvitems}
+\item 1st year of Human Biology degree.
+\end{cvitems}}
+    \cventry{Can Ruti PhD Committee Workshop}{Graphic Wizardry with Inkscape }{Barcelona, Spain}{30th JAN 2020}{\begin{cvitems}
+\item Materials: \:  \href{https://drive.google.com/drive/folders/1YX2Z0tJCsVZ4BlWu7Nwu3ZTNlZL2bq9p?usp=sharing}{Google Drive}
+\end{cvitems}}
+    \cventry{R-Ladies Barcelona Workshop}{Improve your plots with ggplot2 }{Barcelona, Spain}{15th OCT 2019}{\begin{cvitems}
+\item Materials: \: \faGithubSquare \: \href{https://github.com/mireia-bioinfo/workshop_ggplot2}{mireia-bioinfo/workshop\_ggplot2}
+\end{cvitems}}
+    \cventry{Bioinformatics Workshop: Introduction to NGS Data Analysis (EPICHEMBIO)}{Analyzing ChIP-seq data }{Badalona, Spain}{13th - 15th MAR 2019}{\begin{cvitems}
+\item Materials: \: \faGithubSquare \: \href{https://github.com/mireia-bioinfo/workshop_bioinfo_ChIPseq}{mireia-bioinfo/workshop\_bioinfo\_ChIPseq}
+\end{cvitems}}
+    \cventry{R-Ladies Barcelona Workshop}{Plots with ggplot2 are better plots! }{Barcelona, Spain}{27th SEP 2017}{\begin{cvitems}
+\item Materials: \: \faGithubSquare \: \href{https://github.com/mireia-bioinfo/2017-09-27_rladiesBCN-meetup-ggplot2}{mireia-bioinfo/2017-09-27\_rladiesBCN-meetup-ggplot2}
+\end{cvitems}}
+\end{cventries}
+
+\hypertarget{extracurricular-activities}{%
+\section{Extracurricular Activities}\label{extracurricular-activities}}
+
+\begin{cventries}
+    \cventry{Organizer}{R-Ladies Barcelona}{Barcelona Spain}{2017 - 2023}{}\vspace{-4.0mm}
+    \cventry{Member/President}{Can Ruti PhD Committee}{Badalona, Spain}{2018 - 2020}{}\vspace{-4.0mm}
+\end{cventries}
+
+
+
+\end{document}
